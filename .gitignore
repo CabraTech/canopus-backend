@@ -7,3 +7,5 @@ target
 local.properties
 *.lock
 /app/snippets-api
+gradlew
+gradlew.bat
