@@ -9,3 +9,4 @@ local.properties
 /app/snippets-api
 gradlew
 gradlew.bat
+/out/*
