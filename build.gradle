@@ -38,5 +38,6 @@ dependencies {
     compile "io.ktor:ktor-client-core:$ktor_version"
     compile "io.ktor:ktor-client-core-jvm:$ktor_version"
     compile "io.ktor:ktor-client-jetty:$ktor_version"
+    compile "org.mongodb:mongodb-driver:3.6.3"
     testCompile "io.ktor:ktor-server-tests:$ktor_version"
 }
