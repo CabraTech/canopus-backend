@@ -9,5 +9,4 @@ public class CanopusApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CanopusApplication.class, args);
 	}
-
 }
