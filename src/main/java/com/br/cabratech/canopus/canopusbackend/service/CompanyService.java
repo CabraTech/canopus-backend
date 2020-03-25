@@ -14,19 +14,17 @@ public class CompanyService {
 	@Autowired
 	private CompanyRepository companyRepository;
 
-	public Company create(String name, String cnpj, String phone, String email) {
-		return companyRepository.save(new Company(name, cnpj, phone, email));
-	}
 
-	public Company update(String name, String id) {
-		Company company = companyRepository.findById(id).get();
-		company.setName(name);
-		companyRepository.save(company);
-		return company;
+	public Company create(Company company) {
+		return companyRepository.save(company);
 	}
 
 	public void delete(String id) {
 		companyRepository.deleteById(id);
+	}
+
+	public Company findById(String companyId) {
+		return companyRepository.findById(companyId).get();
 	}
 
 	public Company findByCnpj(String cnpj) {
