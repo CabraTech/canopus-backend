@@ -3,7 +3,7 @@ package com.br.cabratech.canopus.canopusbackend.controller;
 import com.br.cabratech.canopus.canopusbackend.model.Company;
 import com.br.cabratech.canopus.canopusbackend.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,27 +15,28 @@ public class CompanyController {
 	@Autowired
 	private CompanyService companyService;
 
-	@RequestMapping(value = "/company-management/company", method = RequestMethod.POST)
+	@PostMapping("/company-management/company")
+	@ResponseStatus(HttpStatus.CREATED)
 	public Company create(@RequestBody Company company) {
 		return companyService.create(company);
 	}
 
-	@RequestMapping(value = "/company-management/company", method = RequestMethod.PUT)
+	@PutMapping("/company-management/company")
 	public Company update(@RequestBody Company company) {
 		return companyService.create(company);
 	}
 
-	@RequestMapping(value = "/company-management/company/{id}", method = RequestMethod.DELETE)
+	@DeleteMapping("/company-management/company/{id}")
 	public void delete(@PathVariable String id) {
 		companyService.delete(id);
 	}
 
-	@RequestMapping(value = "/company-management/company/{id}", method = RequestMethod.GET)
+	@GetMapping("/company-management/company/{id}")
 	public Company retrieve(@PathVariable String id) {
 		return companyService.findById(id);
 	}
 
-	@RequestMapping(value = "/company-management/companies", method = RequestMethod.GET)
+	@GetMapping("/company-management/companies")
 	public List<Company> getAll() {
 		return companyService.findAll();
 	}
